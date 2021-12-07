@@ -16,8 +16,10 @@ start();
 app.use(express.json());
 
 const songsRoutes = require("./routes/songs");
+const translationRoutes = require("./routes/translation");
 
 app.use("/api/v1/songs", songsRoutes);
+app.use("/api/v1/translation", translationRoutes);
 
 const port = process.env.PORT || 9000;
 

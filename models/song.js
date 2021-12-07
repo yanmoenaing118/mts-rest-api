@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const songSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -14,14 +15,8 @@ const songSchema = new mongoose.Schema({
   },
   translations: [
     {
-      language: { type: String },
-      lyric: [
-        {
-          text: { type: String },
-          start: { type: String },
-          end: { type: String },
-        },
-      ],
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Translation",
     },
   ],
 });
